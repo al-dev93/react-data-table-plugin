@@ -1,0 +1,6 @@
+.wrapper {
+  display: flex;
+  float: right;
+  text-align: right;
+  padding-top: 0.25em;
+}
