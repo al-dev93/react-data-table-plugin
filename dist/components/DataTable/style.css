@@ -1,0 +1,97 @@
+/* stylelint-disable a11y/media-prefers-color-scheme */
+.data-table-container {
+  position: relative;
+  clear: both;
+  user-select: none;
+}
+
+.empty-table {
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  left: 30%;
+  text-align: center;
+
+  /* right: 30%; */
+}
+
+.data-table-container::after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+.data-table-container label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 10px;
+}
+
+.data-table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-bottom: 1px solid #111;
+}
+
+.data-table,
+.data-table th,
+.data-table td {
+  box-sizing: content-box;
+}
+
+.data-table thead th {
+  font-weight: bold;
+  padding: 10px 18px;
+  border-bottom: 1px solid #111;
+}
+
+.data-table thead th:active {
+  outline: none;
+}
+
+.data-table tbody tr {
+  background-color: #fff;
+}
+
+.data-table tbody tr.odd {
+  background-color: #f9f9f9;
+}
+
+.data-table tbody tr:hover,
+.data-table tbody tr:focus,
+.data-table tbody tr.odd:hover,
+.data-table tbody tr.odd:focus {
+  background-color: #f6f6f6;
+}
+
+.data-table tbody tr:first-child td {
+  border-top: none;
+}
+
+.data-table tbody tr > .sorting,
+.data-table tbody tr.even > .sorting {
+  background-color: #fafafa;
+}
+
+.data-table tbody tr.odd > .sorting {
+  background-color: #f1f1f1;
+}
+
+.data-table tbody tr:hover > .sorting,
+.data-table tbody tr:focus > .sorting {
+  background-color: #eaeaea;
+}
+
+.empty-data-table {
+  height: 2.19em;
+}
+
+/* .data-table .empty-data-table p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+} */

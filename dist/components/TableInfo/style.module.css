@@ -1,0 +1,14 @@
+.data-table-info {
+  clear: both;
+  float: left;
+  display: flex;
+  padding-top: 0.755em;
+}
+
+.data-table-info p {
+  margin: 0;
+}
+
+.data-table-info p:last-child {
+  margin-left: 0.4em;
+}

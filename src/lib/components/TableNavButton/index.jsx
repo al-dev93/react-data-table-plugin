@@ -1,5 +1,6 @@
 /* eslint-disable no-plusplus */
 import PropTypes from "prop-types";
+import React from "react";
 import style from "./style.module.css";
 
 /**

@@ -1,0 +1,12 @@
+/* stylelint-disable a11y/media-prefers-color-scheme */
+.data-table-filter {
+  float: right;
+  text-align: right;
+  color: #333;
+}
+
+.data-table-filter input {
+  box-sizing: border-box;
+  margin-left: 0.5em;
+  margin-top: 0;
+}
