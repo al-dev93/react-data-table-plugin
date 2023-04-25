@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# react-data-table-plugin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React plugin allows you to create a simple data table in a minimum of time. The table created integrates sorting, filtering and pagination functionalities. It also displays information on the number of records and the filtering result. No customization is required, making implementation quick and easy.
+Only two props are needed: stored data and column format.
 
-## Available Scripts
+This library was built with React and Css.
 
-In the project directory, you can run:
+## Main characteristics
 
-### `npm start`
+- Configuration made with two props
+- Built-in functions:
+  - Sorting (desc/asc), simple or multi-criteria
+  - Pagination
+  - Filter
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This documentation contains information about installation and usage.
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[NodeJS (version 16.15)](https://nodejs.org/en/)
 
-### `npm run build`
+### Run the following command to install the plugin
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install react-data-table-plugin`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Implementation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Import plugin
 
-### `npm run eject`
+```js
+import { DataTable } from "react-data-table-plugin";
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Example of data passed to the dataTable prop
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 1. Prop columnsTitle
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+const columns = [
+  {
+    title: "First Name",
+    data: "firstName",
+    type: "text",
+    isRequired: "required",
+  },
+  {
+    title: "Last Name",
+    data: "lastName",
+    type: "text",
+  },
+  { title: "Date of Birth", data: "dateOfBirth", type: "date" },
+  { title: "Start Date", data: "startDate", type: "date" },
+  { title: "Street", data: "street", type: "alphanumeric" },
+  { title: "City", data: "city", type: "text" },
+  { title: "State", data: "state", type: "list" },
+  { title: "Zip Code", data: "zipCode", type: "number" },
+  { title: "Department", data: "department", type: "list" },
+];
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### 2. Data type and format of column object passed by the columnsTitle prop
 
-## Learn More
+- title: string,
+- data: string in camelcase format,
+- type: string, this property is optional
+  1. "text": (default value),
+  2. "number": numeric value,
+  3. "alphanumeric": string with mixed numbers and characters
+  4. "date": date in US format MM/DD/YYYY
+- isRequired, a non-empty string. This property is optional, it sets the column on which the sorting is done after launching the application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 3. Prop dataTable
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+const data = [
+  {
+    firstName: "Alphonse",
+    lastName: "Daudet",
+    startDate: "01/02/2000",
+    department: "Sales",
+    dateOfBirth: "06/21/1968",
+    street: "2 rue de Tartarin",
+    city: "Tarascon",
+    state: "GA",
+    zipCode: "30800",
+  },
+  {
+    firstName: "Louis",
+    lastName: "delaporte",
+    startDate: "07/06/2004",
+    department: "Human Resources",
+    dateOfBirth: "10/07/1970",
+    street: "84 avenue Victor Hugo",
+    city: "Bondy",
+    state: "SSD",
+    zipCode: "93200",
+  },
+];
+```
 
-### Code Splitting
+Names of the properties of data object must match the values ​​of data properties of the columns object
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 4. Use of the plug-in
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+const root = ReactDom.createRoot(document.getElementById("root"));
+root.render(
+  <StrictMode>
+    <DataTable dataTable={data} columnsTitle={columns} />
+  </StrictMode>
+);
+```
