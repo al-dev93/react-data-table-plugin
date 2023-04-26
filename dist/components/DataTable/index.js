@@ -1,11 +1,12 @@
-import "core-js/modules/es.weak-map.js";
 import "core-js/modules/web.dom-collections.iterator.js";
 import "core-js/modules/es.array.reduce.js";
 import "core-js/modules/es.array.includes.js";
 import "core-js/modules/es.string.includes.js";
 import "core-js/modules/es.array.sort.js";
-import "./style.css";
+import "core-js/modules/es.weak-map.js";
 import { numericTypeSort, ascendingCompare } from "../ColumnDataTable/index";
+import "./style.css";
+
 Object.defineProperty(exports, "__esModule", {
   value: true,
 });

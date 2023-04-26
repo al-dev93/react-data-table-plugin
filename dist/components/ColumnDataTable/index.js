@@ -1,6 +1,7 @@
 import "core-js/modules/es.symbol.description.js";
 import "core-js/modules/es.array.sort.js";
 import "core-js/modules/web.dom-collections.iterator.js";
+
 Object.defineProperty(exports, "__esModule", {
   value: true,
 });
@@ -24,6 +25,7 @@ var _styleModule = _interopRequireDefault(require("./style.module.css"));
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
+// eslint-disable-next-line no-unused-expressions
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
   if (Object.getOwnPropertySymbols) {
