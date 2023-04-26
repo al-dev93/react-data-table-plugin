@@ -1,6 +1,6 @@
-Object.defineProperty(exports, "__esModule", {
-  value: true,
-});
+// Object.defineProperty(exports, "__esModule", {
+//   value: true,
+// });
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _react = _interopRequireDefault(require("react"));
 var _styleModule = _interopRequireDefault(require("./style.module.css"));

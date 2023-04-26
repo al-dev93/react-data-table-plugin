@@ -2,9 +2,9 @@ import "core-js/modules/es.symbol.description.js";
 import "core-js/modules/es.array.sort.js";
 import "core-js/modules/web.dom-collections.iterator.js";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true,
-});
+// Object.defineProperty(exports, "__esModule", {
+//   value: true,
+// });
 const _ascendingCompare = ascendingCompare;
 export { _ascendingCompare as ascendingCompare };
 const _ascendingCompareDate = ascendingCompareDate;

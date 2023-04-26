@@ -7,9 +7,9 @@ import "core-js/modules/es.weak-map.js";
 import { numericTypeSort, ascendingCompare } from "../ColumnDataTable/index";
 import "./style.css";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true,
-});
+// Object.defineProperty(exports, "__esModule", {
+//   value: true,
+// });
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _react = _interopRequireWildcard(require("react"));
 var _SelectTableLength = _interopRequireDefault(
